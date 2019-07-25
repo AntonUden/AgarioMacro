@@ -65,6 +65,13 @@ namespace AgarioMacro {
 			}
 		}
 
+		public void enableAll() {
+			var keys = Program.moduleManager.getModules().Keys;
+			foreach (String key in keys) {
+				getModule(key).enable(true);
+			}
+		}
+
 		public void loadModules(String nameSpace) {
 			Type[] typeList = GetTypesInNamespace(Assembly.GetExecutingAssembly(), nameSpace);
 

@@ -1,25 +1,25 @@
 ﻿using System.Diagnostics;
 using System.Windows.Forms;
-using mp.hooks;
+using Gma.System.MouseKeyHook;
 
 namespace AgarioMacro {
 	class KeyboardEventListener {
 		public KeyboardEventListener() {
-			Program.hook.KeyDown += keyDown;
-			Program.hook.KeyUp += keyUp;
+			Program.hook.KeyDown += OnKeyDown;
+			Program.hook.KeyUp += OnKeyUp;
 		}
 
-		private void keyDown(int wParam, KeyboardHookData lParam) {
-			keyEvent(wParam, lParam, KeyPressType.KEY_DOWN);
+		private void OnKeyDown(object sender, KeyEventArgs e) {
+			keyEvent(e.KeyCode, KeyPressType.KEY_DOWN);
 		}
 
-		private void keyUp(int wParam, KeyboardHookData lParam) {
-			keyEvent(wParam, lParam, KeyPressType.KEY_UP);
+		private void OnKeyUp(object sender, KeyEventArgs e) {
+			keyEvent(e.KeyCode, KeyPressType.KEY_UP);
 		}
 
-		private void keyEvent(int wParam, KeyboardHookData lParam, KeyPressType type) {
-			Keys key = (Keys)lParam.vkCode;
-			Debug.WriteLine(type.ToString() + " " + key.ToString());
+
+		private void keyEvent(Keys key, KeyPressType type) {
+			//Debug.WriteLine(type.ToString() + " " + key.ToString());
 			Program.moduleManager.handleKeyPress(key, type);
 		}
 	}

@@ -27,7 +27,6 @@ namespace AgarioMacro {
 		}
 
 		private void MainWindow_Load(object sender, EventArgs e) {
-			btn_Stop.Enabled = false;
 			//p_Modules.AutoScroll = true;
 			p_Modules.FlowDirection = FlowDirection.TopDown;
 			p_Modules.WrapContents = false;
@@ -55,20 +54,12 @@ namespace AgarioMacro {
 			Program.exit();
 		}
 
-		private void Btn_Start_Click(object sender, EventArgs e) {
-			btn_Start.Enabled = false;
-			btn_Stop.Enabled = true;
-			if (!Program.hook.Hooked) {
-				Program.hook.hook();
-			}
+		private void Btn_enableAll_Click(object sender, EventArgs e) {
+			Program.moduleManager.enableAll();
 		}
 
-		private void Btn_Stop_Click(object sender, EventArgs e) {
-			btn_Stop.Enabled = false;
-			btn_Start.Enabled = true;
-			if (Program.hook.Hooked) {
-				Program.hook.unhook();
-			}
+		private void Btn_disableAll_Click(object sender, EventArgs e) {
+			Program.moduleManager.disableAll();
 		}
 	}
 }

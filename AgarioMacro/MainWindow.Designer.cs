@@ -30,8 +30,8 @@
         {
 			this.gbx_modules = new System.Windows.Forms.GroupBox();
 			this.p_Modules = new System.Windows.Forms.FlowLayoutPanel();
-			this.btn_Start = new System.Windows.Forms.Button();
-			this.btn_Stop = new System.Windows.Forms.Button();
+			this.btn_enableAll = new System.Windows.Forms.Button();
+			this.btn_disableAll = new System.Windows.Forms.Button();
 			this.gbx_modules.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -60,33 +60,33 @@
 			this.p_Modules.TabIndex = 0;
 			this.p_Modules.Resize += new System.EventHandler(this.P_Modules_Resize);
 			// 
-			// btn_Start
+			// btn_enableAll
 			// 
-			this.btn_Start.Location = new System.Drawing.Point(12, 12);
-			this.btn_Start.Name = "btn_Start";
-			this.btn_Start.Size = new System.Drawing.Size(75, 23);
-			this.btn_Start.TabIndex = 2;
-			this.btn_Start.Text = "Start";
-			this.btn_Start.UseVisualStyleBackColor = true;
-			this.btn_Start.Click += new System.EventHandler(this.Btn_Start_Click);
+			this.btn_enableAll.Location = new System.Drawing.Point(12, 12);
+			this.btn_enableAll.Name = "btn_enableAll";
+			this.btn_enableAll.Size = new System.Drawing.Size(75, 23);
+			this.btn_enableAll.TabIndex = 2;
+			this.btn_enableAll.Text = "Enable all";
+			this.btn_enableAll.UseVisualStyleBackColor = true;
+			this.btn_enableAll.Click += new System.EventHandler(this.Btn_enableAll_Click);
 			// 
-			// btn_Stop
+			// btn_disableAll
 			// 
-			this.btn_Stop.Location = new System.Drawing.Point(93, 12);
-			this.btn_Stop.Name = "btn_Stop";
-			this.btn_Stop.Size = new System.Drawing.Size(75, 23);
-			this.btn_Stop.TabIndex = 3;
-			this.btn_Stop.Text = "Stop";
-			this.btn_Stop.UseVisualStyleBackColor = true;
-			this.btn_Stop.Click += new System.EventHandler(this.Btn_Stop_Click);
+			this.btn_disableAll.Location = new System.Drawing.Point(93, 12);
+			this.btn_disableAll.Name = "btn_disableAll";
+			this.btn_disableAll.Size = new System.Drawing.Size(75, 23);
+			this.btn_disableAll.TabIndex = 3;
+			this.btn_disableAll.Text = "Disable all";
+			this.btn_disableAll.UseVisualStyleBackColor = true;
+			this.btn_disableAll.Click += new System.EventHandler(this.Btn_disableAll_Click);
 			// 
 			// MainWindow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.Controls.Add(this.btn_Stop);
-			this.Controls.Add(this.btn_Start);
+			this.Controls.Add(this.btn_disableAll);
+			this.Controls.Add(this.btn_enableAll);
 			this.Controls.Add(this.gbx_modules);
 			this.Name = "MainWindow";
 			this.Text = "Form1";
@@ -100,8 +100,8 @@
 		#endregion
 		private System.Windows.Forms.GroupBox gbx_modules;
 		private System.Windows.Forms.FlowLayoutPanel p_Modules;
-		private System.Windows.Forms.Button btn_Start;
-		private System.Windows.Forms.Button btn_Stop;
+		private System.Windows.Forms.Button btn_enableAll;
+		private System.Windows.Forms.Button btn_disableAll;
 	}
 }
 

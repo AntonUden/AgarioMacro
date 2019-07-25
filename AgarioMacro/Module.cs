@@ -64,7 +64,7 @@ namespace AgarioMacro {
 
 		private void enableCheckBox_CheckedChanged(Object sender, System.EventArgs e) {
 			if(((CheckBox)sender).Checked == this.enabled) {
-				Debug.WriteLine("checked == enabled");
+				//Debug.WriteLine("checked == enabled");
 				return;
 			}
 
@@ -102,7 +102,7 @@ namespace AgarioMacro {
 			this.enabled = true;
 			updateEnabledLabel();
 			if (changeCheckbox) {
-				this.enableCheckBox.Checked = false;
+				this.enableCheckBox.Checked = true;
 			}
 
 			return true;
